@@ -539,17 +539,8 @@
 
                 let cleanedText = text.replace(/\D/g, '');
 
-                // Lógica de pós-processamento mais robusta
+                // Lógica de pós-processamento para corrigir 8 para 9
                 cleanedText = cleanedText.replace(/8/g, '9');
-                cleanedText = cleanedText.replace(/^0+/, ''); // Remove zeros à esquerda
-
-                // Garante que o texto tenha no máximo 48 caracteres
-                if (cleanedText.length > 48) {
-                    cleanedText = cleanedText.substring(0, 48);
-                } else if (cleanedText.length < 48) {
-                    // Adiciona lógica para tentar recuperar o caractere perdido se necessário
-                    // Por exemplo, uma heurística simples se a imagem for sempre de um formato específico.
-                }
 
                 outputImage.classList.remove('loading');
                 outputImage.innerHTML = `
